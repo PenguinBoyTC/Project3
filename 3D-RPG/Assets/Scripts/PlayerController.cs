@@ -1,16 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class PlayerControl : MonoBehaviour {
-	public 
+public class PlayerController : MonoBehaviour {
+	NavMeshAgent nav;
+	public float speed;
+	private Vector3 position;
 	// Use this for initialization
 	void Start () {
-		
+		position = transform.position;	
+		nav = GetComponent<NavMeshAgent> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetMouseButtonDown (0)) {
+			locatePosition ();
+			if (Vector3.Distance (transform.position, position) > 1) {
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+				RaycastHit hit;
+				if (Physics.Raycast (ray, out hit, 100)) {
+					nav.SetDestination (hit.point);
+				}
+			}
+		}
+	}
+	void locatePosition()
+	{
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if(Physics.Raycast(ray, out hit, 1000))
+		{
+			//if(hit.collider.tag!="Player"&&hit.collider.tag!="Enemy")
+			//{
+			position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+			Debug.Log (position);
+			//}
+		}
 	}
 }
