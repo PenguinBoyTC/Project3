@@ -22,6 +22,7 @@ public class ClickToMove : MonoBehaviour {
 	void Update () {
 		if(Input.GetMouseButton(1))
 		{
+            Debug.Log("Clicking");
 			locatePosition();			
 		}
 		moveToPosition();
