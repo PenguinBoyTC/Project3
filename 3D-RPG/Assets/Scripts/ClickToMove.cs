@@ -7,26 +7,33 @@ public class ClickToMove : MonoBehaviour {
 	public float attacktime;
 	public CharacterController controller;
 	private Vector3 position;
-	//public AnimationClip run;
-	//public AnimationClip idle;
 	public static bool attack;
 	public static bool die;
 	public Animator anim;
+
+	private List<Transform> enemiesInRange = new List<Transform> ();
+	private bool canMove;
+	private bool canAttack;
+	public float attackDamage;
+	public float attackSpeed;
+	public float attackRange;
 
 
 	// Use this for initialization
 	void Start () {
 		position = transform.position;	
+		canMove = true;
+		canAttack = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.A)) {
-			print ("Attacking");
+			Debug.Log ("Attacking");
 			Attack ();
 			position = transform.position;	
 		}
-		else if (!attack && !die) {
+		else if (canMove) {
 			if (Input.GetMouseButton (1)) {
 				Debug.Log ("Clicking");
 				locatePosition ();			
@@ -61,20 +68,42 @@ public class ClickToMove : MonoBehaviour {
 		else {
 			anim.SetInteger ("Condition", 0);
 		}
-			
 	}
 	void Attack(){
-		if (attack) {
+		if (!canAttack) {
 			return;
 		}
 		anim.SetInteger ("Condition", 2);
 		StartCoroutine (AttackRoutine ());
+		StartCoroutine (AttackCooldown ());
 
 	}
 	IEnumerator AttackRoutine()
 	{
-		attack = true;
-		yield return new WaitForSeconds (attacktime);
-		attack = false;
+		canMove = false;
+		yield return new WaitForSeconds (0.1f);
+		anim.SetInteger ("Condition", 0);
+		GetEnemiesInRange ();
+		foreach (Transform enemy in enemiesInRange) {
+			EnemyController ec = enemy.GetComponent<EnemyController> ();
+			if (ec == null) {
+				continue;
+			}
+			ec.GetHit (attackDamage);
+		}
+		yield return new WaitForSeconds (0.60f);
+		canMove = true;
+	}
+	IEnumerator AttackCooldown(){
+		canAttack = false;
+		yield return new WaitForSeconds (1 / attackSpeed);
+		canAttack = true;
+	}
+	void GetEnemiesInRange(){
+		foreach (Collider c in Physics.OverlapSphere ((transform.position + transform.forward*0.5f),0.5f)) {
+			if (c.gameObject.CompareTag ("enemy")) {
+				enemiesInRange.Add (c.transform);
+			}
+		}
 	}
 }
