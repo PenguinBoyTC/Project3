@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			locatePosition ();
+			//Create a relation between the map and player so that the player can check where can go.
 			if (Vector3.Distance (transform.position, position) > 1) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 				RaycastHit hit;
