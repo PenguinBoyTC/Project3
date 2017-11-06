@@ -18,7 +18,9 @@ public class EnemyController : MonoBehaviour {
 	void Update () {
 		
 	}
-	public void GetHit(float damage){
+	//control the enemy health and check if enemy die.
+	public void GetHit(float damage)
+	{
 		if (dead) {
 			return;
 		}
@@ -27,7 +29,7 @@ public class EnemyController : MonoBehaviour {
 			Die ();
 		}
 	}
-	void Die()
+	void Die()//Destroy the enemy object.
 	{
 		dead = true;
 		GameObject.Destroy (this.gameObject, dieAftertime);
