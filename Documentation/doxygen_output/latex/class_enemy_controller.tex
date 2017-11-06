@@ -1,0 +1,78 @@
+\hypertarget{class_enemy_controller}{}\section{Enemy\+Controller Class Reference}
+\label{class_enemy_controller}\index{Enemy\+Controller@{Enemy\+Controller}}
+Inheritance diagram for Enemy\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enemy_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_enemy_controller_a1aefc89669c41a6353ecf463c937af07}{Get\+Hit} (float damage)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a5c91ac8bc0f622901cb7a48ba787f0bd}\label{class_enemy_controller_a5c91ac8bc0f622901cb7a48ba787f0bd}} 
+float {\bfseries total\+Health}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a7af1c6ac310289274ab51a7c2893fa0b}\label{class_enemy_controller_a7af1c6ac310289274ab51a7c2893fa0b}} 
+float {\bfseries current\+Health}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_ae505ed595e6b9807cddd599a50c55ad9}\label{class_enemy_controller_ae505ed595e6b9807cddd599a50c55ad9}} 
+float {\bfseries exp\+Granted}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_aac2e78d7cd1271cef258e616032cd4c7}\label{class_enemy_controller_aac2e78d7cd1271cef258e616032cd4c7}} 
+float {\bfseries attack\+Damage}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a181f04ac7727efc9ee6d200ad19b0518}\label{class_enemy_controller_a181f04ac7727efc9ee6d200ad19b0518}} 
+float {\bfseries die\+Aftertime}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_enemy_controller_aef5af22782327b22749e5632ad7467fb}{Start} ()
+\item 
+void \hyperlink{class_enemy_controller_aa2585b33cdd57288a0c5a669f188f6ca}{Die} ()
+\item 
+void \hyperlink{class_enemy_controller_a98b4f2b8c651189ef6b419e6400abc36}{Drop\+Loot} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a2428b11f3cec6e784f7982b60fcc0147}\label{class_enemy_controller_a2428b11f3cec6e784f7982b60fcc0147}} 
+bool {\bfseries dead}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_controller_aa2585b33cdd57288a0c5a669f188f6ca}\label{class_enemy_controller_aa2585b33cdd57288a0c5a669f188f6ca}} 
+\index{Enemy\+Controller@{Enemy\+Controller}!Die@{Die}}
+\index{Die@{Die}!Enemy\+Controller@{Enemy\+Controller}}
+\subsubsection{\texorpdfstring{Die()}{Die()}}
+{\footnotesize\ttfamily void Enemy\+Controller.\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: \hyperlink{class_enemy_controller}{Enemy\+Controller} object has no health Post\+: Enemy object destroyed return\+: NA \mbox{\Hypertarget{class_enemy_controller_a98b4f2b8c651189ef6b419e6400abc36}\label{class_enemy_controller_a98b4f2b8c651189ef6b419e6400abc36}} 
+\index{Enemy\+Controller@{Enemy\+Controller}!Drop\+Loot@{Drop\+Loot}}
+\index{Drop\+Loot@{Drop\+Loot}!Enemy\+Controller@{Enemy\+Controller}}
+\subsubsection{\texorpdfstring{Drop\+Loot()}{DropLoot()}}
+{\footnotesize\ttfamily void Enemy\+Controller.\+Drop\+Loot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: Enemy object destroyed Post\+: Message printed return\+: NA \mbox{\Hypertarget{class_enemy_controller_a1aefc89669c41a6353ecf463c937af07}\label{class_enemy_controller_a1aefc89669c41a6353ecf463c937af07}} 
+\index{Enemy\+Controller@{Enemy\+Controller}!Get\+Hit@{Get\+Hit}}
+\index{Get\+Hit@{Get\+Hit}!Enemy\+Controller@{Enemy\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Hit()}{GetHit()}}
+{\footnotesize\ttfamily void Enemy\+Controller.\+Get\+Hit (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})}
+
+Pre\+: \hyperlink{class_enemy_controller}{Enemy\+Controller} object initialized and hit Post\+: \hyperlink{class_enemy_controller}{Enemy\+Controller} health adjusted return\+: NA \mbox{\Hypertarget{class_enemy_controller_aef5af22782327b22749e5632ad7467fb}\label{class_enemy_controller_aef5af22782327b22749e5632ad7467fb}} 
+\index{Enemy\+Controller@{Enemy\+Controller}!Start@{Start}}
+\index{Start@{Start}!Enemy\+Controller@{Enemy\+Controller}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Enemy\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: \hyperlink{class_enemy_controller}{Enemy\+Controller} object created Post\+: \hyperlink{class_enemy_controller}{Enemy\+Controller} object initialized return\+: NA 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+E\+E\+C\+S448/project3/\+Project3/3\+D-\/\+R\+P\+G/\+Assets/\+Scripts/Enemy\+Controller.\+cs\end{DoxyCompactItemize}

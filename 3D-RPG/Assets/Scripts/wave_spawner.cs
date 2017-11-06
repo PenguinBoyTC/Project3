@@ -14,6 +14,11 @@ public class wave_spawner : MonoBehaviour {
     private int wave_index = 0;
     public Text wave_countdown_text;
 
+    /**
+    * Pre: wave_spawned object created
+    * Post: counter adjusted and if timer has run out, spawn_wave called
+    * return: NA
+    **/
     void Update()
     {
         if (countdown <= 0f)
@@ -28,6 +33,11 @@ public class wave_spawner : MonoBehaviour {
  //       wave_countdown_text.text = Mathf.Round(countdown).ToString();  //turns countdown into string after finding floor of countdown, aka, not decimals 
     }
 
+    /**
+    * Pre: countdown timer expired
+    * Post: spawn_enemy called for the wave
+    * return: NA
+    **/
     IEnumerator Spawn_wave()  //allows pausing of spawn_wave
     {
         wave_index++;
@@ -38,6 +48,11 @@ public class wave_spawner : MonoBehaviour {
         }
     }
 
+    /**
+    * Pre: none
+    * Post: Enemy object created at spawn point
+    * return: NA
+    **/
     void Spawn_enemy()
     {
         Instantiate(enemy_prefab, spawn_point.position, spawn_point.rotation);

@@ -19,15 +19,23 @@ public class ClickToMove : MonoBehaviour {
 	public float attackRange;
 
 
-	// Use this for initialization
-	void Start () {
+    /**
+    * Pre: player object created
+    * Post: player object initialized to allow for movement and attack
+    * return: NA
+    **/
+    void Start () {
 		position = transform.position;	
 		canMove = true;
 		canAttack = true;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    /**
+    * Pre: player object created
+    * Post: methods called as based on input of mouse or keyboard
+    * return: NA
+    **/
+    void Update () {
 		if (Input.GetKey (KeyCode.A)) {
 			Debug.Log ("Attacking");
 			Attack ();
@@ -42,8 +50,13 @@ public class ClickToMove : MonoBehaviour {
 		} 
 
 	}
-	//calculate the mouse position and set to position varible
-	void locatePosition()
+
+    /**
+    * Pre: player object created
+    * Post: position of enemy determined for attack
+    * return: NA
+    **/
+    void locatePosition()
 	{
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -55,8 +68,13 @@ public class ClickToMove : MonoBehaviour {
 			}
 		}
 	}
-	//let player move to the position.
-	void moveToPosition()
+
+    /**
+    * Pre: player object created
+    * Post: player moved to position of click
+    * return: NA
+    **/
+    void moveToPosition()
 	{
 		//Game Object is moving;
 		if (Vector3.Distance (transform.position, position) > 1) {
@@ -71,8 +89,13 @@ public class ClickToMove : MonoBehaviour {
 			anim.SetInteger ("Condition", 0);
 		}
 	}
-	//control the player attack animation and attackCooldown.
-	void Attack(){
+
+    /**
+    * Pre: player object created and attack key is pressed
+    * Post: animation of attacking called
+    * return: NA
+    **/
+    void Attack(){
 		if (!canAttack) {
 			return;
 		}
@@ -81,8 +104,13 @@ public class ClickToMove : MonoBehaviour {
 		StartCoroutine (AttackCooldown ());
 
 	}
-	// detemine when the player is attacking and when is moving.
-	IEnumerator AttackRoutine()
+
+    /**
+    * Pre: player object created and attack animation called
+    * Post: attack animation commences
+    * return: NA
+    **/
+    IEnumerator AttackRoutine()
 	{
 		canMove = false;
 		yield return new WaitForSeconds (0.1f);
@@ -98,14 +126,24 @@ public class ClickToMove : MonoBehaviour {
 		yield return new WaitForSeconds (0.60f);
 		canMove = true;
 	}
-	//control the speed of attack animation 
-	IEnumerator AttackCooldown(){
+
+    /**
+    * Pre: player object created
+    * Post: attack animation cooldown set/adjusted
+    * return: NA
+    **/
+    IEnumerator AttackCooldown(){
 		canAttack = false;
 		yield return new WaitForSeconds (1 / attackSpeed);
 		canAttack = true;
 	}
-	//when any enemy close to the player, set it in to the enemy list so that player can attack it.
-	void GetEnemiesInRange(){
+
+    /**
+    * Pre: player object created
+    * Post: enemy object within range is set to able to be attacked
+    * return: NA
+    **/
+    void GetEnemiesInRange(){
 		enemiesInRange.Clear ();
 		foreach (Collider c in Physics.OverlapSphere ((transform.position + transform.forward*1.5f),1.5f)) {
 			if (c.gameObject.CompareTag ("enemy")) {

@@ -7,14 +7,23 @@ public class PlayerController : MonoBehaviour {
 	NavMeshAgent nav;
 	public float speed;
 	private Vector3 position;
-	// Use this for initialization
-	void Start () {
+
+    /**
+    * Pre: PlayerController object created
+    * Post: PlayerController object initialized
+    * return: NA
+    **/
+    void Start () {
 		position = transform.position;	
 		nav = GetComponent<NavMeshAgent> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    /**
+    * Pre: PlayerController object initialized
+    * Post: PlayerController object updated for that frame
+    * return: NA
+    **/
+    void Update () {
 		if (Input.GetMouseButtonDown (0)) {
 			locatePosition ();
 			//Create a relation between the map and player so that the player can check where can go.
@@ -27,7 +36,13 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 	}
-	void locatePosition()
+
+    /**
+    * Pre: PlayerController object created
+    * Post: PlayerController finds position of mouse for attacking
+    * return: NA
+    **/
+    void locatePosition()
 	{
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

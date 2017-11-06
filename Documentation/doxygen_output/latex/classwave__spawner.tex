@@ -1,0 +1,73 @@
+\hypertarget{classwave__spawner}{}\section{wave\+\_\+spawner Class Reference}
+\label{classwave__spawner}\index{wave\+\_\+spawner@{wave\+\_\+spawner}}
+Inheritance diagram for wave\+\_\+spawner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwave__spawner}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwave__spawner_ab4dc5725df6456980068ee94a159d361}\label{classwave__spawner_ab4dc5725df6456980068ee94a159d361}} 
+Transform {\bfseries enemy\+\_\+prefab}
+\item 
+\mbox{\Hypertarget{classwave__spawner_a1b18aba1e910346fb16de96894d3d4fa}\label{classwave__spawner_a1b18aba1e910346fb16de96894d3d4fa}} 
+Transform {\bfseries spawn\+\_\+point}
+\item 
+\mbox{\Hypertarget{classwave__spawner_abbc823be2179bae1976ed1751abf9c15}\label{classwave__spawner_abbc823be2179bae1976ed1751abf9c15}} 
+float {\bfseries time\+\_\+between\+\_\+waves} = 5.\+5f
+\item 
+\mbox{\Hypertarget{classwave__spawner_a5a53cfa452310466ba0770f00c2911a5}\label{classwave__spawner_a5a53cfa452310466ba0770f00c2911a5}} 
+float {\bfseries spawn\+\_\+pause} = 0.\+5f
+\item 
+\mbox{\Hypertarget{classwave__spawner_a7fed1f46da7e53b59badb80c26e0941c}\label{classwave__spawner_a7fed1f46da7e53b59badb80c26e0941c}} 
+Text {\bfseries wave\+\_\+countdown\+\_\+text}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classwave__spawner_ae049116b14cb20519c1c5a2dc2b824d8}{Update} ()
+\item 
+I\+Enumerator \hyperlink{classwave__spawner_ad77dc8cd1dbf901d7be2336b5768829e}{Spawn\+\_\+wave} ()
+\item 
+void \hyperlink{classwave__spawner_a21e2893023c0716bee2f0811eaee7fa2}{Spawn\+\_\+enemy} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwave__spawner_a6f2f5e8ba354225136c8c116508ca207}\label{classwave__spawner_a6f2f5e8ba354225136c8c116508ca207}} 
+float {\bfseries start\+\_\+time\+\_\+between\+\_\+waves} = 5.\+5f
+\item 
+\mbox{\Hypertarget{classwave__spawner_af3057e46998da1c5bee5cc59f1bf6287}\label{classwave__spawner_af3057e46998da1c5bee5cc59f1bf6287}} 
+float {\bfseries countdown} = 2f
+\item 
+\mbox{\Hypertarget{classwave__spawner_a8befc58cd3205bc2419130ea673bafbc}\label{classwave__spawner_a8befc58cd3205bc2419130ea673bafbc}} 
+int {\bfseries wave\+\_\+index} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classwave__spawner_a21e2893023c0716bee2f0811eaee7fa2}\label{classwave__spawner_a21e2893023c0716bee2f0811eaee7fa2}} 
+\index{wave\+\_\+spawner@{wave\+\_\+spawner}!Spawn\+\_\+enemy@{Spawn\+\_\+enemy}}
+\index{Spawn\+\_\+enemy@{Spawn\+\_\+enemy}!wave\+\_\+spawner@{wave\+\_\+spawner}}
+\subsubsection{\texorpdfstring{Spawn\+\_\+enemy()}{Spawn\_enemy()}}
+{\footnotesize\ttfamily void wave\+\_\+spawner.\+Spawn\+\_\+enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: none Post\+: Enemy object created at spawn point return\+: NA \mbox{\Hypertarget{classwave__spawner_ad77dc8cd1dbf901d7be2336b5768829e}\label{classwave__spawner_ad77dc8cd1dbf901d7be2336b5768829e}} 
+\index{wave\+\_\+spawner@{wave\+\_\+spawner}!Spawn\+\_\+wave@{Spawn\+\_\+wave}}
+\index{Spawn\+\_\+wave@{Spawn\+\_\+wave}!wave\+\_\+spawner@{wave\+\_\+spawner}}
+\subsubsection{\texorpdfstring{Spawn\+\_\+wave()}{Spawn\_wave()}}
+{\footnotesize\ttfamily I\+Enumerator wave\+\_\+spawner.\+Spawn\+\_\+wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: countdown timer expired Post\+: spawn\+\_\+enemy called for the wave return\+: NA \mbox{\Hypertarget{classwave__spawner_ae049116b14cb20519c1c5a2dc2b824d8}\label{classwave__spawner_ae049116b14cb20519c1c5a2dc2b824d8}} 
+\index{wave\+\_\+spawner@{wave\+\_\+spawner}!Update@{Update}}
+\index{Update@{Update}!wave\+\_\+spawner@{wave\+\_\+spawner}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void wave\+\_\+spawner.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: wave\+\_\+spawned object created Post\+: counter adjusted and if timer has run out, spawn\+\_\+wave called return\+: NA 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+E\+E\+C\+S448/project3/\+Project3/3\+D-\/\+R\+P\+G/\+Assets/\+Scripts/wave\+\_\+spawner.\+cs\end{DoxyCompactItemize}

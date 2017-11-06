@@ -1,0 +1,131 @@
+\hypertarget{class_click_to_move}{}\section{Click\+To\+Move Class Reference}
+\label{class_click_to_move}\index{Click\+To\+Move@{Click\+To\+Move}}
+Inheritance diagram for Click\+To\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_click_to_move}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_click_to_move_aac470519ddd58c7abd2483189fad68a1}\label{class_click_to_move_aac470519ddd58c7abd2483189fad68a1}} 
+float {\bfseries speed}
+\item 
+\mbox{\Hypertarget{class_click_to_move_ad53ee05cf310c30384135105872ba4ec}\label{class_click_to_move_ad53ee05cf310c30384135105872ba4ec}} 
+float {\bfseries attacktime}
+\item 
+\mbox{\Hypertarget{class_click_to_move_a994f7ef477344b83f88a2e3f6cc851d7}\label{class_click_to_move_a994f7ef477344b83f88a2e3f6cc851d7}} 
+Character\+Controller {\bfseries controller}
+\item 
+\mbox{\Hypertarget{class_click_to_move_ac94045aa2258a65663f2a808253d5aa5}\label{class_click_to_move_ac94045aa2258a65663f2a808253d5aa5}} 
+Animator {\bfseries anim}
+\item 
+\mbox{\Hypertarget{class_click_to_move_a8268ad4762bb2f7487c71036e269bde4}\label{class_click_to_move_a8268ad4762bb2f7487c71036e269bde4}} 
+float {\bfseries attack\+Damage}
+\item 
+\mbox{\Hypertarget{class_click_to_move_ad66cd916848620bfecd80b52c4a9511a}\label{class_click_to_move_ad66cd916848620bfecd80b52c4a9511a}} 
+float {\bfseries attack\+Speed}
+\item 
+\mbox{\Hypertarget{class_click_to_move_a5f4d06a67a3c86936fe45943e52d6b94}\label{class_click_to_move_a5f4d06a67a3c86936fe45943e52d6b94}} 
+float {\bfseries attack\+Range}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_click_to_move_a1c210864eeb2d4b60b6ca933b0aa6b2d}\label{class_click_to_move_a1c210864eeb2d4b60b6ca933b0aa6b2d}} 
+static bool {\bfseries attack}
+\item 
+\mbox{\Hypertarget{class_click_to_move_a263b8d7596f06f4c3cfa4219f1c728cc}\label{class_click_to_move_a263b8d7596f06f4c3cfa4219f1c728cc}} 
+static bool {\bfseries die}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_click_to_move_ab5f10418f80164154a69d18809fec30d}{Start} ()
+\item 
+void \hyperlink{class_click_to_move_aa9c5f267b0b5ad54a2444aaddec00862}{Update} ()
+\item 
+void \hyperlink{class_click_to_move_ad8ff402015f7fb9e9e850400ca47e47b}{locate\+Position} ()
+\item 
+void \hyperlink{class_click_to_move_add7581013c28bc5180a4111a196cec41}{move\+To\+Position} ()
+\item 
+void \hyperlink{class_click_to_move_a7a22f9529f61a4da097d950d65b5bcaa}{Attack} ()
+\item 
+I\+Enumerator \hyperlink{class_click_to_move_a81c5db2ca3553c2bb0cd6473437a5561}{Attack\+Routine} ()
+\item 
+I\+Enumerator \hyperlink{class_click_to_move_a9ec6685677f20e880a600762dd64d22a}{Attack\+Cooldown} ()
+\item 
+void \hyperlink{class_click_to_move_a12f6a353fabc43f592dd239da275b5e6}{Get\+Enemies\+In\+Range} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_click_to_move_afd98b037b9175c78885ad6a7815a11b8}\label{class_click_to_move_afd98b037b9175c78885ad6a7815a11b8}} 
+Vector3 {\bfseries position}
+\item 
+\mbox{\Hypertarget{class_click_to_move_aa1b653d4efebd28d2a2b644e2bc5abb7}\label{class_click_to_move_aa1b653d4efebd28d2a2b644e2bc5abb7}} 
+List$<$ Transform $>$ {\bfseries enemies\+In\+Range} = new List$<$Transform$>$ ()
+\item 
+\mbox{\Hypertarget{class_click_to_move_acad5001efecf12cd5a0e326bbab8b6c8}\label{class_click_to_move_acad5001efecf12cd5a0e326bbab8b6c8}} 
+bool {\bfseries can\+Move}
+\item 
+\mbox{\Hypertarget{class_click_to_move_ae7968592257870641fce73765fda4c12}\label{class_click_to_move_ae7968592257870641fce73765fda4c12}} 
+bool {\bfseries can\+Attack}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_click_to_move_a7a22f9529f61a4da097d950d65b5bcaa}\label{class_click_to_move_a7a22f9529f61a4da097d950d65b5bcaa}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!Attack@{Attack}}
+\index{Attack@{Attack}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily void Click\+To\+Move.\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created and attack key is pressed Post\+: animation of attacking called return\+: NA \mbox{\Hypertarget{class_click_to_move_a9ec6685677f20e880a600762dd64d22a}\label{class_click_to_move_a9ec6685677f20e880a600762dd64d22a}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!Attack\+Cooldown@{Attack\+Cooldown}}
+\index{Attack\+Cooldown@{Attack\+Cooldown}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{Attack\+Cooldown()}{AttackCooldown()}}
+{\footnotesize\ttfamily I\+Enumerator Click\+To\+Move.\+Attack\+Cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created Post\+: attack animation cooldown set/adjusted return\+: NA \mbox{\Hypertarget{class_click_to_move_a81c5db2ca3553c2bb0cd6473437a5561}\label{class_click_to_move_a81c5db2ca3553c2bb0cd6473437a5561}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!Attack\+Routine@{Attack\+Routine}}
+\index{Attack\+Routine@{Attack\+Routine}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{Attack\+Routine()}{AttackRoutine()}}
+{\footnotesize\ttfamily I\+Enumerator Click\+To\+Move.\+Attack\+Routine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created and attack animation called Post\+: attack animation commences return\+: NA \mbox{\Hypertarget{class_click_to_move_a12f6a353fabc43f592dd239da275b5e6}\label{class_click_to_move_a12f6a353fabc43f592dd239da275b5e6}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!Get\+Enemies\+In\+Range@{Get\+Enemies\+In\+Range}}
+\index{Get\+Enemies\+In\+Range@{Get\+Enemies\+In\+Range}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{Get\+Enemies\+In\+Range()}{GetEnemiesInRange()}}
+{\footnotesize\ttfamily void Click\+To\+Move.\+Get\+Enemies\+In\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created Post\+: enemy object within range is set to able to be attacked return\+: NA \mbox{\Hypertarget{class_click_to_move_ad8ff402015f7fb9e9e850400ca47e47b}\label{class_click_to_move_ad8ff402015f7fb9e9e850400ca47e47b}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!locate\+Position@{locate\+Position}}
+\index{locate\+Position@{locate\+Position}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{locate\+Position()}{locatePosition()}}
+{\footnotesize\ttfamily void Click\+To\+Move.\+locate\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created Post\+: position of enemy determined for attack return\+: NA \mbox{\Hypertarget{class_click_to_move_add7581013c28bc5180a4111a196cec41}\label{class_click_to_move_add7581013c28bc5180a4111a196cec41}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!move\+To\+Position@{move\+To\+Position}}
+\index{move\+To\+Position@{move\+To\+Position}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{move\+To\+Position()}{moveToPosition()}}
+{\footnotesize\ttfamily void Click\+To\+Move.\+move\+To\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created Post\+: player moved to position of click return\+: NA \mbox{\Hypertarget{class_click_to_move_ab5f10418f80164154a69d18809fec30d}\label{class_click_to_move_ab5f10418f80164154a69d18809fec30d}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!Start@{Start}}
+\index{Start@{Start}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Click\+To\+Move.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created Post\+: player object initialized to allow for movement and attack return\+: NA \mbox{\Hypertarget{class_click_to_move_aa9c5f267b0b5ad54a2444aaddec00862}\label{class_click_to_move_aa9c5f267b0b5ad54a2444aaddec00862}} 
+\index{Click\+To\+Move@{Click\+To\+Move}!Update@{Update}}
+\index{Update@{Update}!Click\+To\+Move@{Click\+To\+Move}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Click\+To\+Move.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: player object created Post\+: methods called as based on input of mouse or keyboard return\+: NA 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+E\+E\+C\+S448/project3/\+Project3/3\+D-\/\+R\+P\+G/\+Assets/\+Scripts/Click\+To\+Move.\+cs\end{DoxyCompactItemize}

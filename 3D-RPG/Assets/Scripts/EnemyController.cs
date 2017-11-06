@@ -9,17 +9,21 @@ public class EnemyController : MonoBehaviour {
 	public float expGranted;
 	public float attackDamage;
 	public float dieAftertime;
-	// Use this for initialization
-	void Start () {
+    /**
+    * Pre: EnemyController object created
+    * Post: EnemyController object initialized
+    * return: NA
+    **/
+    void Start () {
 		currentHealth = totalHealth;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	//control the enemy health and check if enemy die.
-	public void GetHit(float damage)
+
+    /**
+    * Pre: EnemyController object initialized and hit
+    * Post: EnemyController health adjusted
+    * return: NA
+    **/
+    public void GetHit(float damage)
 	{
 		if (dead) {
 			return;
@@ -29,12 +33,24 @@ public class EnemyController : MonoBehaviour {
 			Die ();
 		}
 	}
-	void Die()//Destroy the enemy object.
+
+    /**
+    * Pre: EnemyController object has no health
+    * Post: Enemy object destroyed
+    * return: NA
+    **/
+    void Die()//Destroy the enemy object.
 	{
 		dead = true;
 		GameObject.Destroy (this.gameObject, dieAftertime);
 	}
-	void DropLoot(){
+
+    /**
+    * Pre: Enemy object destroyed
+    * Post: Message printed
+    * return: NA
+    **/
+    void DropLoot(){
 		print ("You get the bounty");
 	}
 }
