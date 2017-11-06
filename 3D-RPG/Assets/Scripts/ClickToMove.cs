@@ -100,7 +100,8 @@ public class ClickToMove : MonoBehaviour {
 		canAttack = true;
 	}
 	void GetEnemiesInRange(){
-		foreach (Collider c in Physics.OverlapSphere ((transform.position + transform.forward*0.5f),0.5f)) {
+		enemiesInRange.Clear ();
+		foreach (Collider c in Physics.OverlapSphere ((transform.position + transform.forward*1.5f),1.5f)) {
 			if (c.gameObject.CompareTag ("enemy")) {
 				enemiesInRange.Add (c.transform);
 			}
