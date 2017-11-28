@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour {
 	private Transform experienceBar;
     void Start () {
 		level = 1;
-		experienceBar = UIController.instance.transform.Find ("Background/Experience");
-		levelText = UIController.instance.transform.Find ("Background/Level_Text").GetComponent<Text> ();
+		//experienceBar = UIController.instance.transform.Find ("Background/Experience");
+		//levelText = UIController.instance.transform.Find ("Background/Level_Text").GetComponent<Text> ();
 		SetExperience (0);
 	}
 
@@ -21,17 +21,17 @@ public class PlayerController : MonoBehaviour {
 	}
 	public void SetExperience(float exp){
 		experience += exp;
-		float experienceNeeded = GameLogic.ExperienceForNextLevel (level);
-		float previousExperience = GameLogic.ExperienceForNextLevel (level - 1);
-		if (experience >= experienceNeeded) {
-			LevelUp ();
-			experienceNeeded= GameLogic.ExperienceForNextLevel (level);
-			previousExperience = GameLogic.ExperienceForNextLevel (level - 1);
-		}
-		experienceBar.Find ("Fill").GetComponent<Image> ().fillAmount = (experience - previousExperience) / (experienceNeeded - previousExperience);
+		//float experienceNeeded = GameLogic.ExperienceForNextLevel (level);
+		//float previousExperience = GameLogic.ExperienceForNextLevel (level - 1);
+		//if (experience >= experienceNeeded) {
+			//LevelUp ();
+			//experienceNeeded= GameLogic.ExperienceForNextLevel (level);
+			//previousExperience = GameLogic.ExperienceForNextLevel (level - 1);
+		//}
+		//experienceBar.Find ("Fill").GetComponent<Image> ().fillAmount = (experience - previousExperience) / (experienceNeeded - previousExperience);
 	}
 	void LevelUp(){
 		level++;
-		levelText.text = "LV." + level.ToString ("00");
+		//levelText.text = "LV." + level.ToString ("00");
 	}
 }
