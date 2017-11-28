@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ClickToMove : MonoBehaviour {
 	public float speed;
-	public float attacktime;
 	public CharacterController controller;
 	private Vector3 position;
 	public static bool attack;
@@ -28,6 +27,7 @@ public class ClickToMove : MonoBehaviour {
 		position = transform.position;	
 		canMove = true;
 		canAttack = true;
+		AnimationEvents.OnSlashAnimationHit += DealDamage;
 	}
 
     /**
@@ -116,15 +116,8 @@ public class ClickToMove : MonoBehaviour {
 		canMove = false;
 		yield return new WaitForSeconds (0.1f);
 		anim.SetInteger ("Condition", 0);
-		GetEnemiesInRange ();
-		foreach (Transform enemy in enemiesInRange) {
-			EnemyController ec = enemy.GetComponent<EnemyController> ();
-			if (ec == null) {
-				continue;
-			}
-			ec.GetHit (attackDamage);
-		}
-		yield return new WaitForSeconds (0.6f);
+	
+		yield return new WaitForSeconds (1/attackSpeed);
 		canMove = true;
 	}
 
@@ -150,6 +143,17 @@ public class ClickToMove : MonoBehaviour {
 			if (c.gameObject.CompareTag ("enemy")) {
 				enemiesInRange.Add (c.transform);
 			}
+		}
+	}
+	void DealDamage(){
+		GetEnemiesInRange ();
+		print("deal damage");
+		foreach (Transform enemy in enemiesInRange) {
+			EnemyController ec = enemy.GetComponent<EnemyController> ();
+			if (ec == null) {
+				continue;
+			}
+			ec.GetHit (attackDamage);
 		}
 	}
 }
