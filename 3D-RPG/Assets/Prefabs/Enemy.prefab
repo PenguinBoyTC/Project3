@@ -29,7 +29,7 @@ GameObject:
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4510709990919706
 Transform:
@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797792dc9c7b4bd4b9f67f248e6fe5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 1
-  currentHealth: 1
-  expGranted: 0
+  totalHealth: 10
+  currentHealth: 10
+  expGranted: 10
   attackDamage: 0
   dieAftertime: 0.5
 --- !u!114 &114548389713728162

@@ -9,12 +9,16 @@ public class EnemyController : MonoBehaviour {
 	public float expGranted;
 	public float attackDamage;
 	public float dieAftertime;
+
+	private GameObject[] players;
+
     /**
     * Pre: EnemyController object created
     * Post: EnemyController object initialized
     * return: NA
     **/
     void Start () {
+		players = GameObject.FindGameObjectsWithTag ("Player");
 		currentHealth = totalHealth;
 	}
 
@@ -31,7 +35,9 @@ public class EnemyController : MonoBehaviour {
 		currentHealth -= damage;
 		if (currentHealth <= 0) {
 			Die ();
+			return;
 		}
+		//StartCoroutine (RecoverFromHit ());
 	}
 
     /**
@@ -42,6 +48,11 @@ public class EnemyController : MonoBehaviour {
     void Die()//Destroy the enemy object.
 	{
 		dead = true;
+		//animation.SetInteger ("Condition",4);
+		DropLoot();
+		foreach (GameObject go in players) {
+			go.GetComponent<PlayerController>().GetExperience (expGranted/players.Length);
+		}
 		GameObject.Destroy (this.gameObject, dieAftertime);
 	}
 

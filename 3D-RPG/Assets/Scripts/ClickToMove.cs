@@ -99,6 +99,7 @@ public class ClickToMove : MonoBehaviour {
 		if (!canAttack) {
 			return;
 		}
+		anim.speed = attackSpeed;
 		anim.SetInteger ("Condition", 2);
 		StartCoroutine (AttackRoutine ());
 		StartCoroutine (AttackCooldown ());
@@ -123,7 +124,7 @@ public class ClickToMove : MonoBehaviour {
 			}
 			ec.GetHit (attackDamage);
 		}
-		yield return new WaitForSeconds (0.60f);
+		yield return new WaitForSeconds (0.6f);
 		canMove = true;
 	}
 
