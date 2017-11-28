@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/menu/MainMenu_Play.js">
     <Files>
-      <File FileName="Assets\Scripts\ClickToMove.cs" Line="103" Column="27" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="29" Column="3" />
+      <File FileName="Assets/Scripts/menu/MainMenu_Play.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/menu/Background_rotate1.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
