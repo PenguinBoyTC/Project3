@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	public float attackDamage;
 	public float attackRange;
 	private List<Transform> enemiesInRange = new List<Transform> ();
+    private bool alive = true;
 
     void Start () {
 		level = 1;
@@ -57,7 +58,11 @@ public class PlayerController : MonoBehaviour {
     {
 		currentHealth -= damage;
 		healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
-
+        if (currentHealth <= 0)
+        {
+            alive = false;
+            print("player out of health");
+        }
     }
 	/**
     * Pre: player object created
