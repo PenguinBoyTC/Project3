@@ -8,6 +8,8 @@ public class enemy_movement : MonoBehaviour
     private Transform target;
     private int wavepiont_index = 0;
 
+    private GameObject[] players;
+
     /**
     * Pre: enemy object created
     * Post: enemy object initialized by setting target to the first waypoint
@@ -15,6 +17,7 @@ public class enemy_movement : MonoBehaviour
     **/
     void Start()
     {
+        players = GameObject.FindGameObjectsWithTag("Player");
         target = waypoints.points[8];  //starts at point 0, inside start/spawn
     }
 
@@ -30,6 +33,10 @@ public class enemy_movement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
+            foreach (GameObject go in players)
+            {
+                go.GetComponent<PlayerController>().SetHealth();
+            }
             Destroy(gameObject);
             return;
         }

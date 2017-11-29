@@ -1645,7 +1645,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'HP: 200/200'
+  m_Text: 'HP: 100/100
+
+'
 --- !u!222 &1574871230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1795,6 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9407b99ae8160df42828f7f30c83ff30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
 --- !u!54 &1783649265
 Rigidbody:
   m_ObjectHideFlags: 0

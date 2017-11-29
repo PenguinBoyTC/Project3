@@ -9,9 +9,13 @@ public class PlayerController : MonoBehaviour {
 	private int level;
 	private Text levelText;
 	private Transform experienceBar;
+    private Transform healthBar;
+    public float health = 100;
+
     void Start () {
 		level = 1;
 		experienceBar = UIController.instance.transform.Find ("Background/Experience");
+        healthBar = UIController.instance.transform.Find("Background/Health");
 		levelText = UIController.instance.transform.Find ("Background/Level_Text").GetComponent<Text> ();
 		SetExperience (0);
 	}
@@ -35,4 +39,11 @@ public class PlayerController : MonoBehaviour {
 		level++;
 		levelText.text = "LV." + level.ToString ("00");
 	}
+
+    public void SetHealth()
+    {
+        health -= 10;
+        healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = health / 100;
+
+    }
 }
