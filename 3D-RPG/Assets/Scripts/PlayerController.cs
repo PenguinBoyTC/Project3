@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float experience{ get; private set;}
 	private int level;
 	private Text levelText;
+	private Text HP_Text;
 	private Transform experienceBar;
     private Transform healthBar;
 	public float totalHealth;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 		experienceBar = UIController.instance.transform.Find ("Background/Experience");
         healthBar = UIController.instance.transform.Find("Background/Health");
 		levelText = UIController.instance.transform.Find ("Background/Level_Text").GetComponent<Text> ();
+		HP_Text = UIController.instance.transform.Find ("Background/Health/HP_Text").GetComponent<Text> ();
 		SetAttackDamage ();
 		SetExperience (0);
 	}
@@ -56,13 +58,17 @@ public class PlayerController : MonoBehaviour {
 
 	public void GetHit(float damage)
     {
-		currentHealth -= damage;
-		healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
-        if (currentHealth <= 0)
-        {
-            alive = false;
-            print("player out of health");
-        }
+		if (currentHealth <= 0) {
+			currentHealth = 0;
+			alive = false;
+			print ("player out of health");
+		} 
+		else 
+		{
+			currentHealth -= damage;
+			healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
+			HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+		}
     }
 	/**
     * Pre: player object created
