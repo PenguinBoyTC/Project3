@@ -15,7 +15,7 @@ public class enemy_movement : MonoBehaviour
     **/
     void Start()
     {
-        target = waypoints.points[0];  //starts at point 0, inside start/spawn
+        target = waypoints.points[8];  //starts at point 0, inside start/spawn
     }
 
     /**
@@ -30,25 +30,9 @@ public class enemy_movement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
-            Get_next_waypoint();  //reached a waypoint, get the next
-        }
-    }
-
-    /**
-    * Pre: enemy object created
-    * Post: enemy target waypoint set to next waypoint in the waypoint array
-    * return: NA
-    **/
-    void Get_next_waypoint()
-    {
-        if (wavepiont_index >= waypoints.points.Length - 1)
-        {
             Destroy(gameObject);
             return;
         }
-
-        wavepiont_index++;  //increase index to find next point
-        target = waypoints.points[wavepiont_index];  //sets new target to the next waypoint within the array
     }
 
 }
