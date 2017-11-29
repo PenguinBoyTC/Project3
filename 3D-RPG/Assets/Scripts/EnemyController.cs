@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
 	public float totalHealth;
 	public float currentHealth;
 	public float expGranted;
-	public float attackDamage;
+	//public float attackDamage;
 	public float dieAftertime;
 
 	private GameObject[] players;

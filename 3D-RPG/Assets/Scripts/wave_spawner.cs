@@ -13,6 +13,7 @@ public class wave_spawner : MonoBehaviour {
     public float spawn_pause = 0.5f;  //time between spawns of enemies
     private int wave_index = 0;
     public Text wave_countdown_text;
+    public int wave_max = 10;
 
     /**
     * Pre: wave_spawned object created
@@ -30,7 +31,7 @@ public class wave_spawner : MonoBehaviour {
 
         countdown -= Time.deltaTime;  //time ticks at one tick per second
 
- //       wave_countdown_text.text = Mathf.Round(countdown).ToString();  //turns countdown into string after finding floor of countdown, aka, not decimals 
+        //wave_countdown_text.text = Mathf.Round(countdown).ToString();  //turns countdown into string after finding floor of countdown, aka, not decimals 
     }
 
     /**
@@ -40,11 +41,14 @@ public class wave_spawner : MonoBehaviour {
     **/
     IEnumerator Spawn_wave()  //allows pausing of spawn_wave
     {
-        wave_index++;
-        for (int i = 0; i < wave_index; i++)
+        if (wave_index < wave_max)
         {
-            Spawn_enemy();
-            yield return new WaitForSeconds(spawn_pause);  //pauses before spawning new enemy
+            wave_index++;
+            for (int i = 0; i < wave_index; i++)
+            {
+                Spawn_enemy();
+                yield return new WaitForSeconds(spawn_pause);  //pauses before spawning new enemy
+            }
         }
     }
 
@@ -55,7 +59,8 @@ public class wave_spawner : MonoBehaviour {
     **/
     void Spawn_enemy()
     {
-        Instantiate(enemy_prefab, spawn_point.position, spawn_point.rotation);
+        int spawnIndex = Random.Range(0, waypoints.points.Length - 1);
+        Instantiate(enemy_prefab, waypoints.points[spawnIndex].position, waypoints.points[spawnIndex].rotation);
     }
 
 }
