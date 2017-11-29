@@ -4,7 +4,7 @@ public class enemy_movement : MonoBehaviour
 {
 
     public float enemy_speed = 10f;
-
+	public float attackDamage;
     private Transform target;
     private int wavepiont_index = 0;
 
@@ -35,7 +35,7 @@ public class enemy_movement : MonoBehaviour
         {
             foreach (GameObject go in players)
             {
-                go.GetComponent<PlayerController>().SetHealth();
+				go.GetComponent<PlayerController>().GetHit(attackDamage);
             }
             Destroy(gameObject);
             return;
