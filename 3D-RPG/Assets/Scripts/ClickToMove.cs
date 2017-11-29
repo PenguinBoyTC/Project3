@@ -10,12 +10,9 @@ public class ClickToMove : MonoBehaviour {
 	public static bool die;
 	public Animator anim;
 
-	private List<Transform> enemiesInRange = new List<Transform> ();
 	private bool canMove;
 	private bool canAttack;
-	public float attackDamage;
 	public float attackSpeed;
-	public float attackRange;
 
 
     /**
@@ -27,7 +24,6 @@ public class ClickToMove : MonoBehaviour {
 		position = transform.position;	
 		canMove = true;
 		canAttack = true;
-		AnimationEvents.OnSlashAnimationHit += DealDamage;
 	}
 
     /**
@@ -130,30 +126,5 @@ public class ClickToMove : MonoBehaviour {
 		canAttack = false;
 		yield return new WaitForSeconds (1 / attackSpeed);
 		canAttack = true;
-	}
-
-    /**
-    * Pre: player object created
-    * Post: enemy object within range is set to able to be attacked
-    * return: NA
-    **/
-    void GetEnemiesInRange(){
-		enemiesInRange.Clear ();
-		foreach (Collider c in Physics.OverlapSphere ((transform.position + transform.forward*1.5f),1.5f)) {
-			if (c.gameObject.CompareTag ("enemy")) {
-				enemiesInRange.Add (c.transform);
-			}
-		}
-	}
-	void DealDamage(){
-		GetEnemiesInRange ();
-		print("deal damage");
-		foreach (Transform enemy in enemiesInRange) {
-			EnemyController ec = enemy.GetComponent<EnemyController> ();
-			if (ec == null) {
-				continue;
-			}
-			ec.GetHit (attackDamage);
-		}
 	}
 }
