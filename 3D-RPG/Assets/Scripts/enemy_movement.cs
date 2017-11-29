@@ -38,6 +38,7 @@ public class enemy_movement : MonoBehaviour
 				go.GetComponent<PlayerController>().GetHit(attackDamage);
             }
             Destroy(gameObject);
+            print("enemy reached base");
             return;
         }
     }
