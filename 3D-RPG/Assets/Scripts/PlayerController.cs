@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	private Transform experienceBar;
     private Transform healthBar;
     public float health = 100;
+    private bool alive = true;
 
     void Start () {
 		level = 1;
@@ -44,6 +45,10 @@ public class PlayerController : MonoBehaviour {
     {
         health -= 10;
         healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = health / 100;
-
+        if (health <= 0)
+        {
+            alive = false;
+            print("player out of health");
+        }
     }
 }
