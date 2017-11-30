@@ -25,18 +25,18 @@ public class AbilityUse : MonoBehaviour {
 		GameObject go = Instantiate<GameObject> (fireballPrefab);
 		go.transform.position = this.transform.position;
 		fba = new FireBallAbility ();
-		fba.AbilityPrefab = go;
-		fba.UseAbiltiy (this.gameObject);
+		//fba.AbilityPrefab = go;
+		//fba.UseAbiltiy (this.gameObject);
 
 		StartCoroutine (SpinImage ());
 	}
 	private IEnumerator SpinImage()
 	{
-		while (abilityCooldownTimer.IsRunning && abilityCooldownTimer.Elapsed.TotalSeconds < fba.AbilityCooldown) 
-		{
-			fillImage.fillAmount = ((float)abilityCooldownTimer.Elapsed.TotalSeconds / fba.AbilityCooldown);
-			yield return null;
-		}
+		//while (abilityCooldownTimer.IsRunning && abilityCooldownTimer.Elapsed.TotalSeconds < fba.AbilityCooldown) 
+		//{
+			//fillImage.fillAmount = ((float)abilityCooldownTimer.Elapsed.TotalSeconds / fba.AbilityCooldown);
+			//yield return null;
+		//}
 		fillImage.fillAmount = 0;
 		button.interactable = true;
 		abilityCooldownTimer.Stop ();

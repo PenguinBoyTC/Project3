@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameLogic{
-	public static float ExperienceForNextLevel(int currentLevel){
+	public static float ExperienceForNextLevel(int currentLevel)
+	{
 		if(currentLevel == 0)
 		{
 			return 0;
