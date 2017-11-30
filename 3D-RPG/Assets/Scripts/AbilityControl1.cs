@@ -38,19 +38,19 @@ public class AbilityControl1 : MonoBehaviour {
 
 	public void OnClick()
 	{
-		AbilityActive = true;
 		isStartTimer = true;
-		yield return new WaitForSeconds (FireTime);
-		AbilityActive = false;
 	}
 	public void TipButton()
 	{
 		if (Input.GetKey (KeyCode.Q)) 
 		{
-			AbilityActive = true;
 			isStartTimer = true;
-			yield return new WaitForSeconds (FireTime);
-			AbilityActive = false;
 		}
+	}
+	IEnumerator FireRoutine()
+	{
+		AbilityActive = true;
+		yield return new WaitForSeconds (FireTime);
+		AbilityActive = false;
 	}
 }

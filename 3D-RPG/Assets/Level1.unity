@@ -1007,6 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coldTime: 3
+  FireTime: 0.5
 --- !u!1001 &731626413
 Prefab:
   m_ObjectHideFlags: 0
