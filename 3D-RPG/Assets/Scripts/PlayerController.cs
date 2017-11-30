@@ -14,10 +14,16 @@ public class PlayerController : MonoBehaviour {
     private Transform healthBar;
 	public float totalHealth;
 	public float currentHealth;
+
 	public float strength{get; private set;}
 	public float bonusDamage;
 	public float attackDamage;
 	public float attackRange;
+
+	public float Magic{get; private set;}
+	public float FireBallDamage;
+
+
 	private List<Transform> enemiesInRange = new List<Transform> ();
     private bool alive = true;
 
@@ -30,8 +36,11 @@ public class PlayerController : MonoBehaviour {
         healthBar = UIController.instance.transform.Find("Background/Health");
 		levelText = UIController.instance.transform.Find ("Background/Level_Text").GetComponent<Text> ();
 		HP_Text = UIController.instance.transform.Find ("Background/Health/HP_Text").GetComponent<Text> ();
+
 		SetAttackDamage ();
+		SetFireBallDamage ();
 		SetExperience (0);
+
 	}
 
    
@@ -51,8 +60,14 @@ public class PlayerController : MonoBehaviour {
 	}
 	void LevelUp(){
 		level++;
+
 		strength++;
 		SetAttackDamage ();
+		if(level%5==0)
+		{
+			Magic++;
+			SetFireBallDamage ();
+		}
 		levelText.text = "LV." + level.ToString ("00");
 	}
 
@@ -94,7 +109,13 @@ public class PlayerController : MonoBehaviour {
 			ec.GetHit (attackDamage);
 		}
 	}
+
 	void SetAttackDamage(){
 		attackDamage = GameLogic.CalculatePlayerBaseAttackDamage(this) + bonusDamage;
+	}
+
+	void SetFireBallDamage(){
+		FireBallDamage = GameLogic.CalculatePlayerFireBallDamage (this) + 10;
+		FireBallDestroy.firedamage = FireBallDamage;
 	}
 }
