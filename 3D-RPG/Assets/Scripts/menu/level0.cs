@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
 
 	public void LoadOn()
 	{
-		Application.LoadLevel (0);
+		Application.LoadLevel (1);
 	}
 		
 }
