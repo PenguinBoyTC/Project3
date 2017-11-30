@@ -7,6 +7,7 @@ public class enemy_movement : MonoBehaviour
 	public float attackDamage;
     private Transform target;
     private int wavepiont_index = 0;
+    private Vector3 position;
 
     private GameObject[] players;
 
@@ -19,6 +20,7 @@ public class enemy_movement : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         target = waypoints.points[8];  //starts at point 0, inside start/spawn
+        position = transform.position;
     }
 
     /**
@@ -30,6 +32,14 @@ public class enemy_movement : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;  //move in direction on next wavepoint via subtracting current from next
         transform.Translate(dir.normalized * enemy_speed * Time.deltaTime, Space.World);  //fixed speed, deltaTime makes sure speed doesn't depend on framerate
+
+        if (Vector3.Distance(transform.position, position) > 1)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(position - transform.position, Vector3.forward);
+            newRotation.x = 0f;
+            newRotation.z = 0f;
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 10);
+        }
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
