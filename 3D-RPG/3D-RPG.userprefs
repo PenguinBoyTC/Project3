@@ -1,16 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AbilityControl1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/menu/Menu.cs">
     <Files>
-      <File FileName="Assets\Scripts\FireBallDestroy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FireBallAbility.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AbilityControl1.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\AbilityUse.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UIController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ClickToMove.cs" Line="110" Column="32" />
+      <File FileName="Assets/Scripts/menu/Menu.cs" Line="7" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
