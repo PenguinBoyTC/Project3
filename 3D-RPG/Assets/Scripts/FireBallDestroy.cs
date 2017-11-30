@@ -38,6 +38,7 @@ public class FireBallDestroy : MonoBehaviour {
 			ec.GetHit (firedamage);
 			isHit = true;
 			GameObject.Destroy (gameObject, 0);
+            print("enemy destroyed");
 		}
 	}
 }
