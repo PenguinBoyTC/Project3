@@ -11,10 +11,19 @@ public class AbilityControl1 : MonoBehaviour {
 	private bool isStartTimer;
 	public static bool AbilityActive;
 	public float FireTime;
+	public float FireLong;
+	public float FireDamage;
+	public float FireDamageRange;
+	public float FireSpeed;
+
 	// Use this for initialization
 
 	void Start () {
 		AbilityActive = false;
+		FireBallDestroy.firelong = FireLong;
+		FireBallDestroy.firedamage = FireDamage;
+		FireBallDestroy.fireRange = FireDamageRange;
+		FireBallAbility.fireInterval = FireSpeed;
 		filledImage = transform.Find("Q_CD").GetComponent<Image>();
 	}
 
@@ -26,8 +35,12 @@ public class AbilityControl1 : MonoBehaviour {
 			//AbilityActive = true;
 			timer += Time.deltaTime;
 			filledImage.fillAmount = (coldTime - timer) / coldTime;
-
+		
 		}
+		if (timer > FireTime) 
+		{
+			AbilityActive = false;
+		} 
 		if (timer >= coldTime)
 		{
 			filledImage.fillAmount = 0;
@@ -38,19 +51,15 @@ public class AbilityControl1 : MonoBehaviour {
 
 	public void OnClick()
 	{
+		AbilityActive = true;
 		isStartTimer = true;
 	}
 	public void TipButton()
 	{
 		if (Input.GetKey (KeyCode.Q)) 
 		{
+			AbilityActive = true;
 			isStartTimer = true;
 		}
-	}
-	IEnumerator FireRoutine()
-	{
-		AbilityActive = true;
-		yield return new WaitForSeconds (FireTime);
-		AbilityActive = false;
 	}
 }

@@ -324,7 +324,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 148763654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -960.38934, z: 0}
+  m_LocalPosition: {x: 0, y: -970.91235, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 723508288}
@@ -1008,6 +1008,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coldTime: 3
   FireTime: 0.5
+  FireLong: 2
+  FireDamage: 10
+  FireDamageRange: 1.5
+  FireSpeed: 100
 --- !u!1001 &731626413
 Prefab:
   m_ObjectHideFlags: 0
@@ -1060,12 +1064,12 @@ Prefab:
     - target: {fileID: 114535723692624544, guid: e031a14c95e0a6c4d9d587e41af6f311,
         type: 2}
       propertyPath: totalHealth
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114535723692624544, guid: e031a14c95e0a6c4d9d587e41af6f311,
         type: 2}
       propertyPath: currentHealth
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e031a14c95e0a6c4d9d587e41af6f311, type: 2}
@@ -1232,7 +1236,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 862350620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -939.99994, y: 960.38934, z: 0}
+  m_LocalPosition: {x: -940, y: 970.91235, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 845406379}
@@ -1364,8 +1368,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954125297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 282.5, y: 288.5, z: 0}
-  m_LocalScale: {x: 0.29427084, y: 0.29427084, z: 0.29427084}
+  m_LocalPosition: {x: 279.5, y: 288.5, z: 0}
+  m_LocalScale: {x: 0.29114583, y: 0.29114583, z: 0.29114583}
   m_Children:
   - {fileID: 862350621}
   - {fileID: 148763655}
@@ -2177,6 +2181,7 @@ MonoBehaviour:
   bonusDamage: 9
   attackDamage: 10
   attackRange: 1.5
+  FireBallDamage: 0
 --- !u!54 &1783649265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2203,7 +2208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906a70a78252f3340bc74ef4fe22d446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireBall: {fileID: 54348215571885460, guid: 1d8d2028dc1838b4cba1cdfff96182cb, type: 2}
+  FireBall: {fileID: 54385332804337890, guid: 1d8d2028dc1838b4cba1cdfff96182cb, type: 2}
   Muzzle: {fileID: 1750902776}
 --- !u!1001 &1854246228
 Prefab:
