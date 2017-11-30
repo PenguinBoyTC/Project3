@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 471}
   m_MaxSize: {x: 16004, y: 14042}
   vertical: 0
-  controlID: 10
+  controlID: 49
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 471}
   m_MaxSize: {x: 12004, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 50
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 200}
   m_MaxSize: {x: 12004, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 51
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,7 +211,7 @@ MonoBehaviour:
   - {fileID: 17}
   - {fileID: 18}
   m_Selected: 2
-  m_LastSelected: 3
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -391,24 +391,24 @@ MonoBehaviour:
     width: 200
     height: 569
   m_TreeViewState:
-    scrollPos: {x: 0, y: 56}
-    m_SelectedIDs: baaffbff
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: b8060000
     m_LastClickedID: 0
-    m_ExpandedIDs: 34d1ffffecd1ffffeed1fffff0d1ffff96d2ffff52e2ffffa4faffff0000000058330000
+    m_ExpandedIDs: e0eeffffa0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: entrance
-      m_OriginalName: entrance
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -11980
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.2581298, y: -0.3087753, z: 0.08742395, w: 0.9113031}
     speed: 2
-    m_Value: {x: 0.25811827, y: -0.3087615, z: 0.08742004, w: 0.9112624}
+    m_Value: {x: -0.2581298, y: 0.3087753, z: -0.08742395, w: -0.9113031}
   m_Size:
     m_Target: 35.29569
     speed: 2
@@ -516,7 +516,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -1716
     y: 92
-    width: 463
+    width: 636
     height: 569
 --- !u!114 &17
 MonoBehaviour:
@@ -552,7 +552,7 @@ MonoBehaviour:
     m_ValueSerializationHelper:
     - {x: 345.6, y: 83.80005}
     - {x: 331.6, y: 297.80005}
-    - {x: 345.6, y: 277.80005}
+    - {x: 261.2, y: 144.80005}
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 0}
   m_BreadCrumbs: []
@@ -641,10 +641,10 @@ MonoBehaviour:
   m_LastProjectPath: F:\EECS448\project3\Project3\3D-RPG
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea2c0000
-    m_LastClickedID: 11498
-    m_ExpandedIDs: 00000000d628000002290000b6290000302a0000562a0000942a0000b82a0000c02a0000c42a0000c62a0000d22a0000a42b0000ea2b00000c2c0000162c0000c82c0000dc2c0000f02c0000a62f0000a82f0000aa2f0000ac2f0000ae2f0000b02f00000c380000983c0000ffffff7f
+    scrollPos: {x: 0, y: 69}
+    m_SelectedIDs: 242d0000
+    m_LastClickedID: 11556
+    m_ExpandedIDs: 00000000b0270000e0270000be28000056290000ae290000002a0000362a0000422a0000482a00004a2a0000682a0000842a0000622b0000c22b0000f02b0000042c0000482c0000f42c0000102d00002a2d000070320000723200007432000076320000783200007a3200006633000078330000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -672,7 +672,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d628000002290000302a0000562a0000942a0000b82a0000c02a0000c42a0000c62a0000d22a0000ea2b00000c2c0000162c0000c82c0000dc2c0000f02c0000a62f0000a82f0000aa2f0000ac2f0000ae2f0000b02f0000
+    m_ExpandedIDs: 00000000b0270000e0270000be28000056290000ae290000002a0000362a0000422a0000482a00004a2a0000682a0000842a0000622b0000c22b0000f02b0000042c0000482c0000f42c0000102d00002a2d000070320000723200007432000076320000783200007a320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -779,7 +779,7 @@ MonoBehaviour:
     y: 92
     width: 412
     height: 926
-  m_ScrollPosition: {x: 0, y: 692.9551}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
