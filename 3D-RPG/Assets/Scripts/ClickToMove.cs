@@ -39,7 +39,7 @@ public class ClickToMove : MonoBehaviour {
 		}
 		else if (canMove) {
 			if (Input.GetMouseButton (1)) {
-				Debug.Log ("Clicking");
+			//	Debug.Log ("Clicking");
 				locatePosition ();			
 			}
 			moveToPosition ();
