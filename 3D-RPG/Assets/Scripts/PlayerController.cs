@@ -33,15 +33,17 @@ public class PlayerController : MonoBehaviour {
 	public float currentMagic;
 
     public int testing = 0;
-
+	private bool istesting;
     public Text get_hit_test_text;
 
 
 	private List<Transform> enemiesInRange = new List<Transform> ();
-    private bool alive = true;
+    private bool alive;
 	public static bool isMPEmpty;
 
     void Start () {
+		istesting = false;
+		alive = true;
 		level = 1;
 		strength = 1;
 		currentHealth = totalHealth;
@@ -69,16 +71,24 @@ public class PlayerController : MonoBehaviour {
 
         if (testing != 0)
         {
+			istesting = true;
             test_GetHit();
         }
 	}
 
    
     void Update () {
-		if (AbilityControl1.isMagicCost) 
+		if (alive) 
 		{
-			UseFireBall ();
-			AbilityControl1.isMagicCost = false;
+			if (AbilityControl1.isMagicCost) 
+			{
+				UseFireBall ();
+				AbilityControl1.isMagicCost = false;
+			}
+		} 
+		else if(!alive&&!istesting)
+		{
+			Application.LoadLevel ("GameOver");
 		}
 		
 	}
