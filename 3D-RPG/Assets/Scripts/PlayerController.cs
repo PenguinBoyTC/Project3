@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour {
 	private Text MP_Text;
 	private Transform experienceBar;
     private Transform healthBar;
-<<<<<<< HEAD
+
     private Text health_test_text;
-=======
+
 	private Transform abilityBar;
 
->>>>>>> f0ca9b22bf3bf78da3a2f90abfb714f9dc389b11
+
 	public float totalHealth;
 	public float currentHealth;
 
@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
 	public float FireBallDamage;
 	public float totalMagic;
 	public float currentMagic;
+
+    public Text get_hit_test_text;
 
 
 	private List<Transform> enemiesInRange = new List<Transform> ();
@@ -62,6 +64,8 @@ public class PlayerController : MonoBehaviour {
             health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
             health_test_text.text = "Passed";
         }
+
+        test_GetHit();
 
 	}
 
@@ -120,6 +124,23 @@ public class PlayerController : MonoBehaviour {
 			HP_Text.text = "Event staff wage: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 		}
     }
+
+    public void test_GetHit()
+    {
+        GetHit(10);
+        if (currentHealth < totalHealth)
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (2)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+        else
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (2)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+    }
+
+
 	/**
     * Pre: player object created
     * Post: enemy object within range is set to able to be attacked
