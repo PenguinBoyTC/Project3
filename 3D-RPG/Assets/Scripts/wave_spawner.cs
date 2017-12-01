@@ -47,14 +47,14 @@ public class wave_spawner : MonoBehaviour {
         {
             if (wave_count_test == wave_index)
             {
-               // wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
-               // wave_count_test_text.text = "Passed";
-                //wave_count_test++;
+                wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
+                wave_count_test_text.text = "Passed";
+                wave_count_test++;
             }
             else
             {
-               // wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
-               // wave_count_test_text.text = "Failed";
+                wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
+                wave_count_test_text.text = "Failed";
                 wave_count_test++;
             }
             wave_index++;
