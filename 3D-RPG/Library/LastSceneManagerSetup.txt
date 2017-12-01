@@ -1,8 +1,15 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Level1.unity
 =======
 - path: Assets/GUI menu.unity
 >>>>>>> 7513490883bdf31534bd9755114559ed7cbc92c2
+=======
+- path: Assets/Test.unity
+=======
+- path: Assets/Level0.unity
+>>>>>>> d49df40e1f2f17fdab7d7477c3e7ce651d4622f7
+>>>>>>> parent of 7513490... Fixed the level 1
   isLoaded: 1
   isActive: 1
