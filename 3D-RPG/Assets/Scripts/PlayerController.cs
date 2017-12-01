@@ -203,6 +203,8 @@ public class PlayerController : MonoBehaviour {
 		abilityBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentMagic / totalMagic;
 		//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 		MP_Text.text = "Energy: " + currentMagic.ToString () + "/" + totalMagic.ToString();
+		isMPEmpty = false;
+		AbilityControl1.filledImage.fillAmount = 0;
 	}
 	public void UseFireBall()
 	{

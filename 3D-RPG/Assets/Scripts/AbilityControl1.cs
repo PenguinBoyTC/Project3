@@ -7,7 +7,8 @@ public class AbilityControl1 : MonoBehaviour {
 
 	public float coldTime;
 	private float timer = 0;
-	private Image filledImage;
+	//private Image filledImage;
+	public static Image filledImage;
 	private bool isStartTimer;
 	public static bool AbilityActive;
 	public float FireTime;
