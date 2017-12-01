@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_speed: 5
   attackDamage: 1
+  testing: 1
 --- !u!135 &135861007136049786
 SphereCollider:
   m_ObjectHideFlags: 1

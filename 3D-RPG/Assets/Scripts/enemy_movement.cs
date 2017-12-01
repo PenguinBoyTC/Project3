@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class enemy_movement : MonoBehaviour
 {
@@ -7,6 +11,10 @@ public class enemy_movement : MonoBehaviour
 	public float attackDamage;
     private Transform target;
     private int wavepiont_index = 0;
+
+    private Text enemy_death_test_text;
+
+    public int testing = 0;
 
     private GameObject[] players;
 
@@ -18,7 +26,7 @@ public class enemy_movement : MonoBehaviour
     void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        target = waypoints.points[8];  //starts at point 0, inside start/spawn
+        target = waypoints.points[waypoints.points.Length - 1];  //starts at point 0, inside start/spawn
     }
 
     /**
@@ -36,6 +44,12 @@ public class enemy_movement : MonoBehaviour
             foreach (GameObject go in players)
             {
 				go.GetComponent<PlayerController>().GetHit(attackDamage);
+            }
+
+            if (testing != 0)
+            {
+                enemy_death_test_text = UIController.instance.transform.Find("Tests/Result (4)").GetComponent<Text>();
+                enemy_death_test_text.text = "Passed";
             }
             Destroy(gameObject);
             print("enemy reached base");

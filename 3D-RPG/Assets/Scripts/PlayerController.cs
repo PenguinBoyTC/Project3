@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour {
 
         if (currentHealth == totalHealth) //test0 here 
         {
-            //health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
+            health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
             health_test_text.text = "Passed";
         }
 
@@ -141,12 +141,12 @@ public class PlayerController : MonoBehaviour {
         else
         {
             get_hit_test_text = UIController.instance.transform.Find("Tests/Result (2)").GetComponent<Text>();
-            get_hit_test_text.text = "Passed";
+            get_hit_test_text.text = "Failed";
         }
 
-        GetHit(1000);
+        GetHit(10000);
 
-        if (!alive)
+        if (currentHealth <= 0)
         {
             get_hit_test_text = UIController.instance.transform.Find("Tests/Result (3)").GetComponent<Text>();
             get_hit_test_text.text = "Passed";
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour {
         else
         {
             get_hit_test_text = UIController.instance.transform.Find("Tests/Result (3)").GetComponent<Text>();
-            get_hit_test_text.text = "Passed";
+            get_hit_test_text.text = "Failed";
         }
     }
 
