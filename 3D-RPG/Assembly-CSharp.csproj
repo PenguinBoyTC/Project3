@@ -51,21 +51,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Sprite\Scripts\AbilityControl1.cs" />
-     <Compile Include="Assets\Sprite\Scripts\AbilityUse.cs" />
-     <Compile Include="Assets\Sprite\Scripts\AnimationEvents.cs" />
-     <Compile Include="Assets\Sprite\Scripts\ClickToMove.cs" />
-     <Compile Include="Assets\Sprite\Scripts\enemy_movement.cs" />
-     <Compile Include="Assets\Sprite\Scripts\EnemyController.cs" />
-     <Compile Include="Assets\Sprite\Scripts\FireBallAbility.cs" />
-     <Compile Include="Assets\Sprite\Scripts\FireBallDestroy.cs" />
-     <Compile Include="Assets\Sprite\Scripts\GameLogic.cs" />
-     <Compile Include="Assets\Sprite\Scripts\menu\level0.cs" />
-     <Compile Include="Assets\Sprite\Scripts\MenuButton.cs" />
-     <Compile Include="Assets\Sprite\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Sprite\Scripts\UIController.cs" />
-     <Compile Include="Assets\Sprite\Scripts\wave_spawner.cs" />
-     <Compile Include="Assets\Sprite\Scripts\waypoints.cs" />
+     <Compile Include="Assets\Scripts\AbilityControl1.cs" />
+     <Compile Include="Assets\Scripts\AbilityUse.cs" />
+     <Compile Include="Assets\Scripts\AnimationEvents.cs" />
+     <Compile Include="Assets\Scripts\ClickToMove.cs" />
+     <Compile Include="Assets\Scripts\enemy_movement.cs" />
+     <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\FireBallAbility.cs" />
+     <Compile Include="Assets\Scripts\FireBallDestroy.cs" />
+     <Compile Include="Assets\Scripts\GameLogic.cs" />
+     <Compile Include="Assets\Scripts\menu\level0.cs" />
+     <Compile Include="Assets\Scripts\MenuButton.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\UIController.cs" />
+     <Compile Include="Assets\Scripts\wave_spawner.cs" />
+     <Compile Include="Assets\Scripts\waypoints.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
