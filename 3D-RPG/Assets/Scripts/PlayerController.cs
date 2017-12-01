@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	private Text MP_Text;
 	private Transform experienceBar;
     private Transform healthBar;
+
     private Text health_test_text;
 
 	private Transform abilityBar;
@@ -29,6 +30,10 @@ public class PlayerController : MonoBehaviour {
 	public float FireBallDamage;
 	public float totalMagic;
 	public float currentMagic;
+
+    public int testing = 0;
+
+    public Text get_hit_test_text;
 
 
 	private List<Transform> enemiesInRange = new List<Transform> ();
@@ -61,6 +66,10 @@ public class PlayerController : MonoBehaviour {
             //health_test_text.text = "Passed";
         }
 
+        if (testing != 0)
+        {
+            test_GetHit();
+        }
 	}
 
    
@@ -112,12 +121,43 @@ public class PlayerController : MonoBehaviour {
 		else 
 		{
 			print ("player get hit");
+            print(currentHealth);
 			currentHealth -= damage;
 			healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
 			//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 			HP_Text.text = "Event staff wage: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 		}
     }
+
+    public void test_GetHit()
+    {
+        GetHit(10);
+        if (currentHealth < totalHealth)
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (2)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+        else
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (2)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+
+        GetHit(1000);
+
+        if (!alive)
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (3)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+        else
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (3)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+    }
+
+
 	/**
     * Pre: player object created
     * Post: enemy object within range is set to able to be attacked

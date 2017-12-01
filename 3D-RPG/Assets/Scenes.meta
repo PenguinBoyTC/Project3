@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:3D-RPG/Assets/Scenes.meta
 guid: ff13907634ec91f48b08f7d9a9d48578
 folderAsset: yes
 timeCreated: 1512084368
+=======
+guid: e583856ec594ee148816a9aa3cc6c8e0
+folderAsset: yes
+timeCreated: 1512091695
+>>>>>>> 40354c8d6af26a195ad09b52ffedee00e930d16e:3D-RPG/Assets/Animations/Editor.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
