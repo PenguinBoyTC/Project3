@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 	public float currentMagic;
 
     public int testing = 0;
-
+	private bool istesting;
     public Text get_hit_test_text;
 
 
@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 	public static bool isMPEmpty;
 
     void Start () {
+		istesting = false;
 		alive = true;
 		level = 1;
 		strength = 1;
@@ -64,12 +65,13 @@ public class PlayerController : MonoBehaviour {
 
         if (currentHealth == totalHealth) //test0 here 
         {
-            //health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
-           // health_test_text.text = "Passed";
+            health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
+            health_test_text.text = "Passed";
         }
 
         if (testing != 0)
         {
+			istesting = true;
             test_GetHit();
         }
 	}
@@ -84,7 +86,7 @@ public class PlayerController : MonoBehaviour {
 				AbilityControl1.isMagicCost = false;
 			}
 		} 
-		else
+		else if(!alive&&!istesting)
 		{
 			Application.LoadLevel ("GameOver");
 		}

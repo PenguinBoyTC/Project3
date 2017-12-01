@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Sprite\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Sprite\Scripts\EnemyController.cs">
     <Files>
-      <File FileName="Assets\Sprite\Scripts\PlayerController.cs" Line="89" Column="36" />
-      <File FileName="Assets\Sprite\Scripts\MenuButton.cs" Line="8" Column="37" />
+      <File FileName="Assets\Sprite\Scripts\PlayerController.cs" Line="89" Column="20" />
+      <File FileName="Assets\Sprite\Scripts\MenuButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sprite\Scripts\enemy_movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sprite\Scripts\EnemyController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
