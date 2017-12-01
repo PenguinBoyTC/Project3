@@ -15,11 +15,14 @@ public class AbilityControl1 : MonoBehaviour {
 	public float FireDamage;
 	public float FireDamageRange;
 	public float FireSpeed;
-
+	public static float MagicCost;
+	public static bool isMagicCost;
 	// Use this for initialization
 
 	void Start () {
+		MagicCost = 5;
 		AbilityActive = false;
+		isMagicCost = false;
 		FireBallDestroy.firelong = FireLong;
 		FireBallDestroy.firedamage = FireDamage;
 		FireBallDestroy.fireRange = FireDamageRange;
@@ -34,6 +37,10 @@ public class AbilityControl1 : MonoBehaviour {
 		{
 			//AbilityActive = true;
 			timer += Time.deltaTime;
+			if (timer >= 0 && timer < 0.03) 
+			{
+				isMagicCost = true;
+			}
 			filledImage.fillAmount = (coldTime - timer) / coldTime;
 		
 		}
@@ -51,15 +58,28 @@ public class AbilityControl1 : MonoBehaviour {
 
 	public void OnClick()
 	{
-		AbilityActive = true;
-		isStartTimer = true;
+		if (!PlayerController.isMPEmpty) {
+			AbilityActive = true;
+			isStartTimer = true;
+		} 
+		else
+		{
+			AbilityActive = false;
+			isStartTimer = false;
+		}
 	}
 	public void TipButton()
 	{
-		if (Input.GetKey (KeyCode.Q)) 
+		if (!PlayerController.isMPEmpty) {
+			if (Input.GetKey (KeyCode.Q)) {
+				AbilityActive = true;
+				isStartTimer = true;
+			}
+		} 
+		else
 		{
-			AbilityActive = true;
-			isStartTimer = true;
+			AbilityActive = false;
+			isStartTimer = false;
 		}
 	}
 }

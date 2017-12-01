@@ -22,6 +22,7 @@ public class FireBallAbility : MonoBehaviour {
 			c.AddForce (Muzzle.forward * 1250);
 
 			StartCoroutine (FireInterval());
+
 		}	
 	}
 	IEnumerator FireInterval(){
