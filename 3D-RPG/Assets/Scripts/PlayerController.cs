@@ -62,8 +62,8 @@ public class PlayerController : MonoBehaviour {
 
         if (currentHealth == totalHealth) //test0 here 
         {
-            //health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
-            //health_test_text.text = "Passed";
+            health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
+            health_test_text.text = "Passed";
         }
 
         if (testing != 0)

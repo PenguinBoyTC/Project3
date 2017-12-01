@@ -17,6 +17,8 @@ public class wave_spawner : MonoBehaviour {
     private int wave_count_test = 0;
     private Text wave_count_test_text;
 
+    public int testing = 0;
+
     /**
     * Pre: wave_spawned object created
     * Post: counter adjusted and if timer has run out, spawn_wave called
@@ -45,18 +47,22 @@ public class wave_spawner : MonoBehaviour {
     {
         if (wave_index < wave_max)
         {
-            if (wave_count_test == wave_index)
+            if (testing != 0)
             {
-               // wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
-               // wave_count_test_text.text = "Passed";
-                //wave_count_test++;
+                if (wave_count_test == wave_index)
+                {
+                    wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
+                    wave_count_test_text.text = "Passed";
+                    wave_count_test++;
+                }
+                else
+                {
+                    wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
+                    wave_count_test_text.text = "Failed";
+                    wave_count_test++;
+                }
             }
-            else
-            {
-               // wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
-               // wave_count_test_text.text = "Failed";
-                wave_count_test++;
-            }
+
             wave_index++;
             for (int i = 0; i < wave_index; i++)
             {
