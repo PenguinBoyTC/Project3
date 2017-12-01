@@ -13,12 +13,10 @@ public class PlayerController : MonoBehaviour {
 	private Text MP_Text;
 	private Transform experienceBar;
     private Transform healthBar;
-<<<<<<< HEAD
     private Text health_test_text;
-=======
+
 	private Transform abilityBar;
 
->>>>>>> f0ca9b22bf3bf78da3a2f90abfb714f9dc389b11
 	public float totalHealth;
 	public float currentHealth;
 
@@ -59,8 +57,8 @@ public class PlayerController : MonoBehaviour {
 
         if (currentHealth == totalHealth) //test0 here 
         {
-            health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
-            health_test_text.text = "Passed";
+            //health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
+            //health_test_text.text = "Passed";
         }
 
 	}
