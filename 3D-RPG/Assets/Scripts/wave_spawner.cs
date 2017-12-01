@@ -13,7 +13,7 @@ public class wave_spawner : MonoBehaviour {
     public float spawn_pause = 0.5f;  //time between spawns of enemies
     private int wave_index = 0;
     public Text wave_countdown_text;
-    public int wave_max = 10;
+    public int wave_max = 100;
     private int wave_count_test = 0;
     private Text wave_count_test_text;
 

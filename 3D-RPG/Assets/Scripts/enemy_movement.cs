@@ -18,7 +18,7 @@ public class enemy_movement : MonoBehaviour
     void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        target = waypoints.points[8];  //starts at point 0, inside start/spawn
+        target = waypoints.points[waypoints.points.Length - 1];  //starts at point 0, inside start/spawn
     }
 
     /**
