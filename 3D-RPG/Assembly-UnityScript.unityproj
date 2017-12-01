@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\menu\Background_rotate1.js" />
-     <Compile Include="Assets\Scripts\menu\menual.js" />
+     <Compile Include="Assets\Scripts\menu\optional.js" />
      <Compile Include="Assets\Scripts\menu\Rotate_building1.js" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
