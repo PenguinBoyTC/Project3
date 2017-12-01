@@ -10,8 +10,11 @@ public class PlayerController : MonoBehaviour {
 	private int level;
 	private Text levelText;
 	private Text HP_Text;
+	private Text MP_Text;
 	private Transform experienceBar;
     private Transform healthBar;
+	private Transform abilityBar;
+
 	public float totalHealth;
 	public float currentHealth;
 
@@ -22,20 +25,29 @@ public class PlayerController : MonoBehaviour {
 
 	public float Magic{get; private set;}
 	public float FireBallDamage;
+	public float totalMagic;
+	public float currentMagic;
 
 
 	private List<Transform> enemiesInRange = new List<Transform> ();
     private bool alive = true;
+	public static bool isMPEmpty;
 
     void Start () {
 		level = 1;
 		strength = 1;
 		currentHealth = totalHealth;
+		currentMagic = totalMagic;
+		isMPEmpty = false;
 		AnimationEvents.OnSlashAnimationHit += DealDamage;
+
 		experienceBar = UIController.instance.transform.Find ("Background/Experience");
         healthBar = UIController.instance.transform.Find("Background/Health");
+		abilityBar = UIController.instance.transform.Find("Background/Ability");
+
 		levelText = UIController.instance.transform.Find ("Background/Level_Text").GetComponent<Text> ();
 		HP_Text = UIController.instance.transform.Find ("Background/Health/HP_Text").GetComponent<Text> ();
+		MP_Text = UIController.instance.transform.Find ("Background/Ability/MP_Text").GetComponent<Text> ();
 
 		SetAttackDamage ();
 		SetFireBallDamage ();
@@ -45,6 +57,11 @@ public class PlayerController : MonoBehaviour {
 
    
     void Update () {
+		if (AbilityControl1.isMagicCost) 
+		{
+			UseFireBall ();
+			AbilityControl1.isMagicCost = false;
+		}
 		
 	}
 	public void SetExperience(float exp){
@@ -59,15 +76,21 @@ public class PlayerController : MonoBehaviour {
 		experienceBar.Find ("Fill_bar").GetComponent<Image> ().fillAmount = (experience - previousExperience) / (experienceNeeded - previousExperience);
 	}
 	void LevelUp(){
+		
 		level++;
-
 		strength++;
 		SetAttackDamage ();
-		if(level%5==0)
+
+		if(level%2==0)
 		{
 			Magic++;
 			SetFireBallDamage ();
+			totalHealth += 5;
 		}
+		currentMagic = totalMagic;
+		currentHealth = totalHealth;
+		SetHealthBar ();
+		SetMagicBar ();
 		levelText.text = "LV." + level.ToString ("00");
 	}
 
@@ -80,9 +103,11 @@ public class PlayerController : MonoBehaviour {
 		} 
 		else 
 		{
+			print ("player get hit");
 			currentHealth -= damage;
 			healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
-			HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+			//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+			HP_Text.text = "Event staff wage: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 		}
     }
 	/**
@@ -117,5 +142,33 @@ public class PlayerController : MonoBehaviour {
 	void SetFireBallDamage(){
 		FireBallDamage = GameLogic.CalculatePlayerFireBallDamage (this) + 10;
 		FireBallDestroy.firedamage = FireBallDamage;
+	}
+	void SetHealthBar()
+	{
+		healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
+		//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+		HP_Text.text = "Event staff wage: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+	}
+	void SetMagicBar()
+	{
+		abilityBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentMagic / totalMagic;
+		//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+		MP_Text.text = "Energy: " + currentMagic.ToString () + "/" + totalMagic.ToString();
+	}
+	public void UseFireBall()
+	{
+		if (currentMagic <= 0) {
+			currentMagic = 0;
+			print ("player out of Energy");
+			isMPEmpty = true;
+		} 
+		else 
+		{
+			print ("Cost energy");
+			currentMagic -= AbilityControl1.MagicCost;
+			abilityBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentMagic / totalMagic;
+			//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
+			MP_Text.text = "Energy: " + currentMagic.ToString () + "/" + totalMagic.ToString();
+		}
 	}
 }

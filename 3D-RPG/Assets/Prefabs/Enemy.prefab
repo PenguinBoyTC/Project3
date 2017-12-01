@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797792dc9c7b4bd4b9f67f248e6fe5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 15
-  currentHealth: 15
+  totalHealth: 10
+  currentHealth: 10
   expGranted: 10
   dieAftertime: 0
 --- !u!114 &114548389713728162
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e824213293fd5e48a2bebcc26a4d192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_speed: 10
-  attackDamage: 5
+  enemy_speed: 5
+  attackDamage: 1
 --- !u!135 &135861007136049786
 SphereCollider:
   m_ObjectHideFlags: 1
