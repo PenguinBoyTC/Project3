@@ -38,10 +38,11 @@ public class PlayerController : MonoBehaviour {
 
 
 	private List<Transform> enemiesInRange = new List<Transform> ();
-    private bool alive = true;
+    private bool alive;
 	public static bool isMPEmpty;
 
     void Start () {
+		alive = true;
 		level = 1;
 		strength = 1;
 		currentHealth = totalHealth;
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour {
         if (currentHealth == totalHealth) //test0 here 
         {
             //health_test_text = UIController.instance.transform.Find("Tests/Result").GetComponent<Text>();
-            health_test_text.text = "Passed";
+           // health_test_text.text = "Passed";
         }
 
         if (testing != 0)
@@ -75,10 +76,17 @@ public class PlayerController : MonoBehaviour {
 
    
     void Update () {
-		if (AbilityControl1.isMagicCost) 
+		if (alive) 
 		{
-			UseFireBall ();
-			AbilityControl1.isMagicCost = false;
+			if (AbilityControl1.isMagicCost) 
+			{
+				UseFireBall ();
+				AbilityControl1.isMagicCost = false;
+			}
+		} 
+		else
+		{
+			Application.LoadLevel ("GameOver");
 		}
 		
 	}
