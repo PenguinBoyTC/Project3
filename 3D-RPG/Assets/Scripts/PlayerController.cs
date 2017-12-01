@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour {
 	public float totalMagic;
 	public float currentMagic;
 
+    public int testing = 0;
+
     public Text get_hit_test_text;
 
 
@@ -65,8 +67,10 @@ public class PlayerController : MonoBehaviour {
             health_test_text.text = "Passed";
         }
 
-        test_GetHit();
-
+        if (testing != 0)
+        {
+            test_GetHit();
+        }
 	}
 
    
@@ -118,6 +122,7 @@ public class PlayerController : MonoBehaviour {
 		else 
 		{
 			print ("player get hit");
+            print(currentHealth);
 			currentHealth -= damage;
 			healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
 			//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
@@ -136,6 +141,19 @@ public class PlayerController : MonoBehaviour {
         else
         {
             get_hit_test_text = UIController.instance.transform.Find("Tests/Result (2)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+
+        GetHit(1000);
+
+        if (!alive)
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (3)").GetComponent<Text>();
+            get_hit_test_text.text = "Passed";
+        }
+        else
+        {
+            get_hit_test_text = UIController.instance.transform.Find("Tests/Result (3)").GetComponent<Text>();
             get_hit_test_text.text = "Passed";
         }
     }

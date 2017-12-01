@@ -3100,6 +3100,7 @@ MonoBehaviour:
   FireBallDamage: 0
   totalMagic: 0
   currentMagic: 0
+  testing: 1
   get_hit_test_text: {fileID: 0}
 --- !u!54 &1783649265
 Rigidbody:
