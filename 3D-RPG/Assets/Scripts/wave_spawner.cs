@@ -47,19 +47,6 @@ public class wave_spawner : MonoBehaviour {
     {
         if (wave_index < wave_max)
         {
-<<<<<<< HEAD
-            if (wave_count_test == wave_index)
-            {
-                wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
-                wave_count_test_text.text = "Passed";
-                wave_count_test++;
-            }
-            else
-            {
-                wave_count_test_text = UIController.instance.transform.Find("Tests/Result (1)").GetComponent<Text>();
-                wave_count_test_text.text = "Failed";
-                wave_count_test++;
-=======
             if (testing != 0)
             {
                 if (wave_count_test == wave_index)
@@ -74,7 +61,6 @@ public class wave_spawner : MonoBehaviour {
                     wave_count_test_text.text = "Failed";
                     wave_count_test++;
                 }
->>>>>>> 39fab49c3dfbb8c3dbef0851189c4e2a855788eb
             }
 
             wave_index++;
