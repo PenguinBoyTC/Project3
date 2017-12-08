@@ -1,0 +1,62 @@
+\hypertarget{class_fire_ball_destroy}{}\section{Fire\+Ball\+Destroy Class Reference}
+\label{class_fire_ball_destroy}\index{Fire\+Ball\+Destroy@{Fire\+Ball\+Destroy}}
+Inheritance diagram for Fire\+Ball\+Destroy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fire_ball_destroy}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_aa26d2486387b7c447dcb99d965f6ffb4}\label{class_fire_ball_destroy_aa26d2486387b7c447dcb99d965f6ffb4}} 
+static float {\bfseries firelong}
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_a56d137d97d69e4b4e52f1a882639750a}\label{class_fire_ball_destroy_a56d137d97d69e4b4e52f1a882639750a}} 
+static float {\bfseries firedamage}
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_a3e0d99f013c8f03d2e6eb125379dfe21}\label{class_fire_ball_destroy_a3e0d99f013c8f03d2e6eb125379dfe21}} 
+static float {\bfseries fire\+Range}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_a9a23ef14801277bc2e8d0c04ae28a8e9}\label{class_fire_ball_destroy_a9a23ef14801277bc2e8d0c04ae28a8e9}} 
+void {\bfseries Start} ()
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_ac0d6946ea2ee72f67f4ad59adc1646f0}\label{class_fire_ball_destroy_ac0d6946ea2ee72f67f4ad59adc1646f0}} 
+void {\bfseries Update} ()
+\item 
+void \hyperlink{class_fire_ball_destroy_a104f0b956151d400f8412b9c7cbacf19}{Get\+Enemies\+In\+Range} ()
+\item 
+void \hyperlink{class_fire_ball_destroy_aebef1bc70ef5485396a840c7c38dfea5}{Deal\+Damage} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_a605873ae792e66b2b256273ceb435f4b}\label{class_fire_ball_destroy_a605873ae792e66b2b256273ceb435f4b}} 
+List$<$ Transform $>$ {\bfseries enemies\+In\+Range} = new List$<$Transform$>$ ()
+\item 
+\mbox{\Hypertarget{class_fire_ball_destroy_a774db2a9dba0a6554c77686deabb0729}\label{class_fire_ball_destroy_a774db2a9dba0a6554c77686deabb0729}} 
+bool {\bfseries is\+Hit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fire_ball_destroy_aebef1bc70ef5485396a840c7c38dfea5}\label{class_fire_ball_destroy_aebef1bc70ef5485396a840c7c38dfea5}} 
+\index{Fire\+Ball\+Destroy@{Fire\+Ball\+Destroy}!Deal\+Damage@{Deal\+Damage}}
+\index{Deal\+Damage@{Deal\+Damage}!Fire\+Ball\+Destroy@{Fire\+Ball\+Destroy}}
+\subsubsection{\texorpdfstring{Deal\+Damage()}{DealDamage()}}
+{\footnotesize\ttfamily void Fire\+Ball\+Destroy.\+Deal\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: get the damage. Post\+: cost damage when enemy is in the range, return\+: NA \mbox{\Hypertarget{class_fire_ball_destroy_a104f0b956151d400f8412b9c7cbacf19}\label{class_fire_ball_destroy_a104f0b956151d400f8412b9c7cbacf19}} 
+\index{Fire\+Ball\+Destroy@{Fire\+Ball\+Destroy}!Get\+Enemies\+In\+Range@{Get\+Enemies\+In\+Range}}
+\index{Get\+Enemies\+In\+Range@{Get\+Enemies\+In\+Range}!Fire\+Ball\+Destroy@{Fire\+Ball\+Destroy}}
+\subsubsection{\texorpdfstring{Get\+Enemies\+In\+Range()}{GetEnemiesInRange()}}
+{\footnotesize\ttfamily void Fire\+Ball\+Destroy.\+Get\+Enemies\+In\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pre\+: If enemies is in range. Post\+: Calculate the distance between enemy and fireball object and if the distance is less than fire\+Range than set to list return\+: NA 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+E\+E\+C\+S448/project3/\+Project3/3\+D-\/\+R\+P\+G/\+Assets/\+Scripts/Fire\+Ball\+Destroy.\+cs\end{DoxyCompactItemize}
