@@ -25,6 +25,11 @@ public class FireBallAbility : MonoBehaviour {
 
 		}	
 	}
+	/**
+    * Pre: FireBall interval control
+    * Post: each fireball will come out after 1/fireInterval seconds.
+    * return: NA
+    **/
 	IEnumerator FireInterval(){
 		start = false;
 		yield return new WaitForSeconds (1/fireInterval);

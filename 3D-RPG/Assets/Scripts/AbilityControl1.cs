@@ -24,7 +24,7 @@ public class AbilityControl1 : MonoBehaviour {
 		MagicCost = 5;
 		AbilityActive = false;
 		isMagicCost = false;
-		FireBallDestroy.firelong = FireLong;
+		FireBallDestroy.firelong = FireLong;//control the distance of the fireball
 		FireBallDestroy.firedamage = FireDamage;
 		FireBallDestroy.fireRange = FireDamageRange;
 		FireBallAbility.fireInterval = FireSpeed;
@@ -33,6 +33,7 @@ public class AbilityControl1 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		TipButton ();
 		if (isStartTimer)
 		{
@@ -42,7 +43,7 @@ public class AbilityControl1 : MonoBehaviour {
 			{
 				isMagicCost = true;
 			}
-			filledImage.fillAmount = (coldTime - timer) / coldTime;
+			filledImage.fillAmount = (coldTime - timer) / coldTime;//set the colddown cover
 		
 		}
 		if (timer > FireTime) 
@@ -56,7 +57,11 @@ public class AbilityControl1 : MonoBehaviour {
 			isStartTimer = false;
 		}
 	}
-
+    /**
+    * Pre: click the fireball icon to control the ability
+    * Post: to control if the fireball is available when click the icon.
+    * return: NA
+    **/
 	public void OnClick()
 	{
 		if (!PlayerController.isMPEmpty) {
@@ -69,6 +74,11 @@ public class AbilityControl1 : MonoBehaviour {
 			isStartTimer = false;
 		}
 	}
+	/**
+    * Pre: Tip the key board to control the ability
+    * Post: to control if the fireball is available when tip the Q button.
+    * return: NA
+    **/
 	public void TipButton()
 	{
 		if (!PlayerController.isMPEmpty) {
