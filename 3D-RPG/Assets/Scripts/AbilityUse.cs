@@ -12,6 +12,11 @@ public class AbilityUse : MonoBehaviour {
 	private Button button;
 	private Image fillImage;
 
+	/**
+    * Pre: create fireball object
+    * Post: Fireball timer to control the fireball start and end.
+    * return: NA
+    **/
 	public void OnAbilityUse(GameObject btn)
 	{
 		//if ability is not on cool down use it
@@ -30,6 +35,11 @@ public class AbilityUse : MonoBehaviour {
 
 		StartCoroutine (SpinImage ());
 	}
+	/**
+    * Pre: StartCoroutine for fireball
+    * Post: ability Cooldown Timer.
+    * return: NA
+    **/
 	private IEnumerator SpinImage()
 	{
 		//while (abilityCooldownTimer.IsRunning && abilityCooldownTimer.Elapsed.TotalSeconds < fba.AbilityCooldown) 

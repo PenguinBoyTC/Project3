@@ -20,6 +20,11 @@ public class FireBallDestroy : MonoBehaviour {
 			DealDamage ();
 		}
 	}
+	/**
+    * Pre: If enemies is in range.
+    * Post: Calculate the distance between enemy and fireball object and if the distance is less than fireRange than set to list
+    * return: NA
+    **/
 	void GetEnemiesInRange(){
 		enemiesInRange.Clear ();
 		foreach (Collider c in Physics.OverlapSphere ((transform.position + transform.forward*fireRange),fireRange)) {//the best attackRange=1.5f
@@ -28,6 +33,11 @@ public class FireBallDestroy : MonoBehaviour {
 			}
 		}
 	}
+	/**
+    * Pre: get the damage.
+    * Post: cost damage when enemy is in the range,
+    * return: NA
+    **/
 	void DealDamage(){
 		GetEnemiesInRange ();
 		foreach (Transform enemy in enemiesInRange) {

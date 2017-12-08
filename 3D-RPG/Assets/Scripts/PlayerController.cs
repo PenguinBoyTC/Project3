@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 	private List<Transform> enemiesInRange = new List<Transform> ();
     private bool alive;
 	public static bool isMPEmpty;
-
+	//initial the player at the beginning.
     void Start () {
 		istesting = false;
 		alive = true;
@@ -92,6 +92,11 @@ public class PlayerController : MonoBehaviour {
 		}
 		
 	}
+	/**
+    * Pre: Set experience value
+    * Post: A way to set experience value
+    * return: NA
+    **/
 	public void SetExperience(float exp){
 		experience += exp;
 		float experienceNeeded = GameLogic.ExperienceForNextLevel (level);
@@ -103,6 +108,11 @@ public class PlayerController : MonoBehaviour {
 		}
 		experienceBar.Find ("Fill_bar").GetComponent<Image> ().fillAmount = (experience - previousExperience) / (experienceNeeded - previousExperience);
 	}
+	/**
+    * Pre: Level Up controller
+    * Post: set the level up condition for player
+    * return: NA
+    **/
 	void LevelUp(){
 		
 		level++;
@@ -121,7 +131,11 @@ public class PlayerController : MonoBehaviour {
 		SetMagicBar ();
 		levelText.text = "LV." + level.ToString ("00");
 	}
-
+	/**
+    * Pre: get hit to cost damage
+    * Post: reduce the current health when player is hitted.
+    * return: NA
+    **/
 	public void GetHit(float damage)
     {
 		if (currentHealth <= 0) {
@@ -139,7 +153,7 @@ public class PlayerController : MonoBehaviour {
 			HP_Text.text = "Event staff wage: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 		}
     }
-
+	
     public void test_GetHit()
     {
         GetHit(10);
@@ -182,6 +196,11 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 	}
+	/**
+    * Pre: Deal the damage
+    * Post: cost enemy's health when get hit by player.
+    * return: NA
+    **/
 	void DealDamage(){
 		GetEnemiesInRange ();
 		print("deal damage");
@@ -193,21 +212,39 @@ public class PlayerController : MonoBehaviour {
 			ec.GetHit (attackDamage);
 		}
 	}
-
+	/**
+    * Pre: Set Attack damage
+    * Post: A way to set attack damage
+    * return: NA
+    **/
 	void SetAttackDamage(){
 		attackDamage = GameLogic.CalculatePlayerBaseAttackDamage(this) + bonusDamage;
 	}
-
+	/**
+    * Pre: Set Fireball damage
+    * Post: A way to set Fireball damage
+    * return: NA
+    **/
 	void SetFireBallDamage(){
 		FireBallDamage = GameLogic.CalculatePlayerFireBallDamage (this) + 10;
 		FireBallDestroy.firedamage = FireBallDamage;
 	}
+	/**
+    * Pre: Set Health bar
+    * Post: Set the health bar image when the health keep reducing
+    * return: NA
+    **/
 	void SetHealthBar()
 	{
 		healthBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentHealth / totalHealth;
 		//HP_Text.text = "HP: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 		HP_Text.text = "Event staff wage: " + currentHealth.ToString () + "/" + totalHealth.ToString();
 	}
+	/**
+    * Pre: Set Magic bar
+    * Post: Set the health bar image when the magic keep reducing
+    * return: NA
+    **/
 	void SetMagicBar()
 	{
 		abilityBar.Find("Fill_bar").GetComponent<Image>().fillAmount = currentMagic / totalMagic;
@@ -216,6 +253,11 @@ public class PlayerController : MonoBehaviour {
 		isMPEmpty = false;
 		AbilityControl1.filledImage.fillAmount = 0;
 	}
+	/**
+    * Pre: Fireball using condition
+    * Post: when the fireball is using then cost magic bar.
+    * return: NA
+    **/
 	public void UseFireBall()
 	{
 		if (currentMagic <= 0) {
